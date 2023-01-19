@@ -33,11 +33,13 @@ class MainActivity : AppCompatActivity() {
     fun initCategoryRV(){
         categoryRV = findViewById(R.id.rv_horizontal)
 
-        myAdapter = CategoryAdapter{index ->
+        myAdapter = CategoryAdapter{index, category ->
 
             val newList = CatData.setData(index).map {
                 Category(it.id, it.name, it.isSelected)
             }
+
+            menuAdapter.submitList(MenuDataModule.setData(category.name))
             myAdapter.submitList(CatData.setData(index))
 
             Toast.makeText(this, "$index", Toast.LENGTH_SHORT).show()

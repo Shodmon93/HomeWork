@@ -12,7 +12,7 @@ import com.example.proskillspizza.Category
 import com.example.proskillspizza.MenuData
 import com.example.proskillspizza.R
 
-class CategoryAdapter(private val onClick:((Int)-> Unit)) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(ItemDiffUtil()) {
+class CategoryAdapter(private val onClick:((Int,Category)-> Unit)) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(ItemDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
        return CategoryViewHolder(LayoutInflater.from(parent.context)
@@ -30,7 +30,7 @@ class CategoryAdapter(private val onClick:((Int)-> Unit)) : ListAdapter<Category
 
         init {
             itemView.setOnClickListener {
-                onClick.invoke(adapterPosition)
+                onClick.invoke(adapterPosition,getItem(adapterPosition))
             }
 
         }

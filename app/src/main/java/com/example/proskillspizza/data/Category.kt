@@ -22,8 +22,6 @@ object CatData {
         items.forEachIndexed { index, category ->
             if (selectedIndex == index)
                 category.isSelected = true
-
-            return items
         }
         return items
     }
