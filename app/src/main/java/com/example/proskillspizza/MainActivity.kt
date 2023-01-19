@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val newList = CatData.setData(index).map {
                 Category(it.id, it.name, it.isSelected)
             }
-            myAdapter.submitList(newList)
+            myAdapter.submitList(CatData.setData(index))
 
             Toast.makeText(this, "$index", Toast.LENGTH_SHORT).show()
         }

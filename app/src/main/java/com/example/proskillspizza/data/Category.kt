@@ -11,13 +11,13 @@ object CatData {
 
     fun setData(selectedIndex : Int? = null): MutableList<Category> {
         val items = mutableListOf(
-            Category(1, "Пицца"),
-            Category(2, "Комбо"),
-            Category(3, "Закуски"),
-            Category(4, "Десерты"),
-            Category(5, "Напитки"),
+            Category(0, "Пицца"),
+            Category(1, "Комбо"),
+            Category(2, "Закуски"),
+            Category(3, "Десерты"),
+            Category(4, "Напитки"),
             Category(5, "Соусы"),
-            Category(5, "Другие товары")
+            Category(6, "Другие товары")
         )
         items.forEachIndexed { index, category ->
             if (selectedIndex == index)

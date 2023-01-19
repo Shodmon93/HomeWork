@@ -1,9 +1,11 @@
 package com.example.proskillspizza.recyclerView
 
+import android.graphics.Color.red
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proskillspizza.Category
@@ -23,18 +25,20 @@ class CategoryAdapter(private val onClick:((Int)-> Unit)) : ListAdapter<Category
 
     inner class CategoryViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val categoryTXT :TextView = itemView.findViewById(R.id.text_view)
+        val carView : CardView = itemView.findViewById(R.id.cardView)
+
 
         init {
-            onClick.invoke(adapterPosition)
+            itemView.setOnClickListener {
+                onClick.invoke(adapterPosition)
+            }
+
         }
         fun config(category: Category){
-
             categoryTXT.text = category.name
+            carView.setBackgroundColor(itemView.context.getColor(android.R.color.darker_gray))
             if (category.isSelected){
-
-                categoryTXT.setBackgroundColor(itemView.context.getColor(R.color.purple_200))
-            }else{
-                categoryTXT.setBackgroundColor(itemView.context.getColor(R.color.black))
+                carView.setBackgroundColor(itemView.context.getColor(android.R.color.holo_red_dark))
             }
 
         }
