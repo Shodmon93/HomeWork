@@ -57,7 +57,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/manuItemList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

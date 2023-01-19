@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.proskillspizza.recyclerView.CategoryAdapter
 import com.example.proskillspizza.recyclerView.MenuAdapter
 import com.example.proskillspizza.recyclerView.StockAdapter
